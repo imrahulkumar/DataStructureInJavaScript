@@ -12,6 +12,7 @@ class SinglyLinkedList{
         this.length = 0;
     }
     push(val){
+        //insert at the end.
         var newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
@@ -24,6 +25,7 @@ class SinglyLinkedList{
         return this;
     }
     pop(){
+        //remove the last node
         if(!this.head) return undefined;
         var current = this.head;
         var newTail = current;
@@ -41,6 +43,7 @@ class SinglyLinkedList{
         return current;
     }
     shift(){
+        //remove the head
         if(!this.head) return undefined;
         var currentHead = this.head;
         this.head = currentHead.next;
@@ -51,6 +54,7 @@ class SinglyLinkedList{
         return currentHead;
     }
     unshift(val){
+        // add new head
         var newNode = new Node(val);
         if(!this.head) {
             this.head = newNode;
@@ -62,6 +66,7 @@ class SinglyLinkedList{
         return this;
     }
     get(index){
+        //return a particular index
         if(index < 0 || index >= this.length) return null;
         var counter = 0;
         var current = this.head;
@@ -72,6 +77,7 @@ class SinglyLinkedList{
         return current;
     }
     set(index, val){
+        // update value at particular index
         var foundNode = this.get(index);
         if(foundNode){
             foundNode.val = val;
@@ -80,6 +86,7 @@ class SinglyLinkedList{
         return false;
     }
     insert(index, val){
+        //isert in between
         if(index < 0 || index > this.length) return false;
         if(index === this.length) return !!this.push(val);
         if(index === 0) return !!this.unshift(val);
@@ -93,6 +100,7 @@ class SinglyLinkedList{
         return true;
     }
     remove(index){
+        // to remove the node.
         if(index < 0 || index >= this.length) return undefined;
         if(index === 0) return this.shift();
         if(index === this.length - 1) return this.pop();
@@ -103,6 +111,7 @@ class SinglyLinkedList{
         return removed;
     }
     reverse(){
+        //reverse order of linkedlist 
       var node = this.head;
       this.head = this.tail;
       this.tail = node;
