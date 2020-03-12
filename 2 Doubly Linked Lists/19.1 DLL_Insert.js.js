@@ -41,6 +41,7 @@ class DoublyLinkedList {
         return poppedNode;
     }
     shift(){
+        // remove head
         if(this.length === 0) return undefined;
         var oldHead = this.head;
         if(this.length === 1){
@@ -55,6 +56,7 @@ class DoublyLinkedList {
         return oldHead;
     }
     unshift(val){
+        // add new head
         var newNode = new Node(val);
         if(this.length === 0) {
             this.head = newNode;
